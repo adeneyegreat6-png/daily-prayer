@@ -47,7 +47,7 @@ report an error if the URL is bad).
   VIDEO_THUMBNAIL_NOT_APPLICABLE), youtubeData {title, type "video", privacy "public", madeForKids false,
   category "NONPROFITS_ACTIVISM", tags}, text = YouTube description.
 - YouTube Short: media = 9x16 mp4, youtubeData {title = Shorts title, type "short", privacy "public", madeForKids false}.
-- Facebook Reel (only if the brand has facebookData connected — check getBrandSettings):
+- Facebook Reel (always — the Daily prayer brand has its Facebook Page connected):
   media = 9x16 mp4, facebookData {type "REEL", title = prayer type}, text = Facebook caption.
 
 ## 7. Commit
