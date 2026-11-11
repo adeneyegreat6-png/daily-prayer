@@ -1,6 +1,6 @@
 # Daily Prayer — daily routine (followed by the scheduled task)
 
-Goal: every day, publish one new ~75–80s prayer video to the Metricool brand **"Daily prayer"**
+Goal: every day, publish one new ~75–80s prayer video (YouTube video + Short, Facebook Reel, Instagram Reel, TikTok) to the Metricool brand **"Daily prayer"**
 (blogId `7942366`, timezone Europe/London) at **06:30 UK time the next morning**.
 
 ## 1. Pick today's prayer
@@ -49,6 +49,15 @@ report an error if the URL is bad).
 - YouTube Short: media = 9x16 mp4, youtubeData {title = Shorts title, type "short", privacy "public", madeForKids false}.
 - Facebook Reel (always — the Daily prayer brand has its Facebook Page connected):
   media = 9x16 mp4, facebookData {type "REEL", title = prayer type}, text = Facebook caption.
+- Instagram Reel (always — @every.day.prayer): media = 9x16 mp4, videoCoverMilliseconds 2000,
+  instagramData {type "REEL", showReelOnFeed true, isAiGenerated false}, text = Facebook caption
+  ("Follow the page" → "Follow", add #ChristianReels).
+- TikTok: first call getBrandSettings and check the "Daily prayer" brand has `tiktokData`. If it does NOT,
+  skip TikTok and report "TikTok not connected to the Daily prayer brand". If it does: media = 9x16 mp4,
+  tiktokData {privacyOption "PUBLIC_TO_EVERYONE", title = "Prayer for <Type>", autoAddMusic false,
+  isAigc false, comments/duet/stitch enabled}, text = TikTok caption (short: title, one verse line with
+  reference, "Pray along and type AMEN.", 5–6 hashtags incl. #ChristianTok).
+- Captions file gets an extra "## TikTok" section with that caption.
 
 ## 7. Commit
 Commit `days/dayNN.json` and `days/dayNN_captions.md` to `main` and push.
