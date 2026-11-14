@@ -58,6 +58,16 @@ report an error if the URL is bad).
   isAigc false, comments/duet/stitch enabled}, text = TikTok caption (short: title, one verse line with
   reference, "Pray along and type AMEN.", 5–6 hashtags incl. #ChristianTok).
 - Captions file gets an extra "## TikTok" section with that caption.
+- First comment (every post): set `firstCommentText` on all five posts. Write one per platform, tied to
+  today's prayer type, and add a "## First comments" section to the captions file listing them:
+  - YouTube video + Short: an engagement question about the theme + "I'll pray over every comment today. 🙏"
+    + the verse snippet and reference (e.g. "What's taking your peace right now? Write it below and I'll pray
+    over every comment today. 🙏 'Thou wilt keep him in perfect peace…' Isaiah 26:3").
+  - Facebook + Instagram: "Tag someone who needs <theme> today." + "Drop a 🙏 if you prayed along." +
+    "New prayer every morning at 6:30."
+  - TikTok: one short line, e.g. "What do you need <theme> for today? Comment it and we'll pray together 🙏".
+  - No "Day N", no links, ≤ 300 characters. If Metricool rejects the first comment for a network, schedule
+    that post again without `firstCommentText` and report which network didn't take it.
 
 ## 7. Commit
 Commit `days/dayNN.json` and `days/dayNN_captions.md` to `main` and push.
